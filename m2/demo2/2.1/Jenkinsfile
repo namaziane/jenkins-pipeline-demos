@@ -1,7 +1,8 @@
 pipeline {
     agent any
     environment {
-        RELEASE='20.04'
+        RELEASE='20.04',
+        LOG_LEVEL='WARN'
     }
     stages {
         stage('Build') {
@@ -15,7 +16,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo "Testing. I can see release ${RELEASE}, but not log level ${LOG_LEVEL}"
+                echo "Testing. I can see release ${RELEASE}, but not log level ${LOG_LEVEL2}"
             }
         }
     }
