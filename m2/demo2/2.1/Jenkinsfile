@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         RELEASE='20.04'
-        LOG_LEVEL='WARN'
+        LOG_LEVEL2='WARN'
     }
     stages {
         stage('Build') {
