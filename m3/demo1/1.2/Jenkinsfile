@@ -10,20 +10,17 @@ pipeline {
     stages {
         stage('Audit tools') {                        
             steps {
-                sh '''
-                  git version
-                  java -version
-                  python --version
-                '''
-            }
-        }
-        stage('Publish') {
-            when {
-                expression { return params.RC }
-            } 
-            steps {
-                sh 'outputing'
+               auditTools()
             }
         }
     }
+}
+
+
+void auditTools() {
+    sh '''
+                  git version
+                  java -version
+                  python --version
+    '''
 }
